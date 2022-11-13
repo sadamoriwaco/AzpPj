@@ -1,17 +1,17 @@
-import imp
 import re
 from tabnanny import check
-from django.shortcuts import render
-from django.shortcuts import redirect
-from django.contrib.auth.models import User
+
 from django.contrib import messages
-from requests import request
-
-from info.models import Message,Employee,Group,Good
-from .forms import GroupCheckForm,GroupSelectForm,SearchForm,EmployeesForm,CreateGroupForm,PostForm
-
-from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.db.models import Q
+from django.shortcuts import redirect, render
+# from requests import request
+
+from info.models import Employee, Good, Group, Message
+
+from .forms import (CreateGroupForm, EmployeesForm, GroupCheckForm,
+                    GroupSelectForm, PostForm, SearchForm)
 
 # @login_required(login_url='/admin/login/')
 def index(request):
