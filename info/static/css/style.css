@@ -1,0 +1,48 @@
+body{
+    font-size: 14pt;
+}
+
+.body_content{
+    width: 800px;
+}
+
+.body_content_inner{
+    padding: 50px;
+}
+
+.login_table{
+    background-color: deepskyblue;
+    color: azure;
+}
+
+a{
+    color: rgb(255, 0, 166);
+}
+
+.btn-outline-primary {
+    color: #3F84FC;
+    border-color: #3F84FC; }
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #3F84FC;
+    border-color: #3F84FC; }
+
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(63, 132, 252, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(63, 132, 252, 0.5); }
+
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+    color: #3F84FC;
+    background-color: transparent; }
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #3F84FC;
+    border-color: #3F84FC; }
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-primary.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(63, 132, 252, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(63, 132, 252, 0.5); }

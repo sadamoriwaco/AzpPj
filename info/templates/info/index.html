@@ -1,0 +1,45 @@
+{% extends 'info/layout.html' %}
+{% block title %}index{% endblock %}
+{% block header %}
+<h1>info</h1>
+<p class="caption">※グループのチェックをONにして更新すると、グループに登録されてるユーザーのメッセージだけを表示します。</p>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if messages.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'info:index' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="mode" value="__search_form__">
+    {{search_form}}
+    <button>Search</button>
+</form>
+<hr>
+<form actinon="{% url 'info:index' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="mode" value="__check_form__">
+    {{check_form}}
+    <button>update</button>
+</form>
+{% for item in contents %}
+<hr>
+<p class="message_public">
+    {% if item.group.title == 'public' %}
+    [public]
+    {% endif %}
+</p>
+    <p class="message_content">{{item.content}}</p>
+    <p class="message_date">({{item.pub_date}})</p>
+
+    <p class="message_owner">
+        <span class="message_counter">LGTM : {{item.good_count}}</span>
+        "{{item.owner}}"(<a href="{% url 'info:add' %}?name={{item.owner}}">ユーザー追加</a>)
+        <a href="{% url 'info:good' item.id %}"><button>LGTM！</button></a>
+    </p>
+{% endfor %}
+{% endblock %}
