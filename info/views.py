@@ -13,7 +13,7 @@ from info.models import Employee, Good, Group, Message
 from .forms import (CreateGroupForm, EmployeesForm, GroupCheckForm,
                     GroupSelectForm, PostForm, SearchForm)
 
-# @login_required(login_url='/admin/login/')
+@login_required(login_url='/admin/login/')
 def index(request):
     (public_user,public_group) = get_public()
 
@@ -173,7 +173,7 @@ def good(request,good_id):
     good.message = good_msg
     good.save()
 
-    messages.success(request,'LGTM！')
+    messages.success(request,'LGTM♡')
     return redirect(to='/info')
 
 def get_your_group_message(owner,glist,find):

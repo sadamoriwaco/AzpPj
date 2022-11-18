@@ -16,14 +16,14 @@
 <form action="{% url 'info:index' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="mode" value="__search_form__">
-    {{search_form}}
+    {{ search_form }}
     <button>Search</button>
 </form>
 <hr>
 <form actinon="{% url 'info:index' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="mode" value="__check_form__">
-    {{check_form}}
+    {{ check_form }}
     <button>update</button>
 </form>
 {% for item in contents %}
@@ -33,8 +33,8 @@
     [public]
     {% endif %}
 </p>
-    <p class="message_content">{{item.content}}</p>
-    <p class="message_date">({{item.pub_date}})</p>
+    <p class="message_content">{{ item.content }}</p>
+    <p class="message_date">({{ item.pub_date }})</p>
 
     <p class="message_owner">
         <span class="message_counter">LGTM : {{item.good_count}}</span>
